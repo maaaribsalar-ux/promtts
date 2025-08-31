@@ -21,7 +21,7 @@
       "@/*": ["./src/*"]
     },
     "baseUrl": ".", // Ensure path aliases resolve relative to project root
-    "types": ["node", "next"], // Include Node.js and Next.js types explicitly
+    "types": ["node", "next"], // Include Node.js and Next.js types
     "allowSyntheticDefaultImports": true // Improve module import compatibility
   },
   "include": [
