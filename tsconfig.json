@@ -20,9 +20,9 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "baseUrl": ".", // Ensure path aliases resolve relative to project root
-    "types": ["node", "next"], // Include Node.js and Next.js types
-    "allowSyntheticDefaultImports": true // Improve module import compatibility
+    "baseUrl": ".",
+    "types": ["node", "next"],
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     "next-env.d.ts",
@@ -30,7 +30,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/types",
-    "images.d.ts" // Include custom image declarations
+    "images.d.ts"
   ],
   "exclude": ["node_modules"]
 }
