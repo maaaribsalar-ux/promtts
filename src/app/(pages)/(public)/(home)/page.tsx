@@ -1,5 +1,5 @@
 import Features from '@/components/common/Features'
-import Hero from './components/Hero'
+import Hero from './Hero'
 import Clients from '@/components/common/Clients'
 import FeedbackTestimonial from '@/components/common/FeedbackTestimonial'
 import PricingCards from '@/components/common/PricingCards'
