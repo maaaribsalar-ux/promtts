@@ -1,32 +1,29 @@
+import Features from '@/components/common/Features'
+import Hero from './components/Hero'
+import Clients from '@/components/common/Clients'
+import FeedbackTestimonial from '@/components/common/FeedbackTestimonial'
+import PricingCards from '@/components/common/PricingCards'
+import FAQs from '@/components/common/FAQs'
+import Footer from '@/components/common/Footer'
 import Navbar from '@/components/layout/Navbar'
-import AccountPages from './AccountPages'
-import CTA from './CTA'
-import { accountPages, features, landings, secondaryPages } from './data'
-import Demos from './Demos'
-import Features from './Features'
-import Footer from './Footer'
-import Hero from './Hero'
-import InnerPages from './InnerPages'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Hero',
+  title: 'SassClassic Landing',
 }
 
-const Home = () => {
+const SassClassic = () => {
   return (
     <>
-      <div className="bg-gradient3">
-        <Navbar buttonVariant="outline-primary" centered />
-        <Hero />
-      </div>
-      <Demos landings={landings} />
-      <InnerPages innerPages={secondaryPages} />
-      <AccountPages accountPages={accountPages} />
-      <Features features={features} />
-      <CTA />
+      <Navbar buttonVariant="primary" centered />
+      <Hero />
+      <Features />
+      <Clients />
+      <FeedbackTestimonial />
+      <PricingCards className="bg-gradient3" />
+      <FAQs />
       <Footer />
     </>
   )
 }
-export default Home
+export default SassClassic
