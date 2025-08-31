@@ -1,20 +1,20 @@
-'use client'
-import Link from 'next/link'
-import { Col, Container, Row } from 'react-bootstrap'
-import Typist from 'react-text-typist'
-
-import sass1 from '@/assets/images/hero/saas1.jpg'
-import sass2 from '@/assets/images/hero/saas2.jpg'
-import sass3 from '@/assets/images/hero/saas3.jpg'
-
-// styles
-import 'swiper/css'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay } from 'swiper/modules'
-import Image from 'next/image'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
+'use client';
+import Link from 'next/link';
+import { Col, Container, Row } from 'react-bootstrap';
+import Typist from 'react-text-typist';
+import Image from 'next/image';
+import 'swiper/css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import IconifyIcon from '@/components/wrappers/IconifyIcon';
 
 const SwiperSlider = () => {
+  const images = [
+    '/assets/images/hero/saas1.jpg',
+    '/assets/images/hero/saas2.jpg',
+    '/assets/images/hero/saas3.jpg',
+  ];
+
   return (
     <Swiper
       modules={[Autoplay]}
@@ -23,19 +23,24 @@ const SwiperSlider = () => {
         disableOnInteraction: false,
       }}
       spaceBetween={30}
-      loop>
-      {[sass1, sass2, sass3].map((img, idx) => {
-        return (
-          <SwiperSlide key={idx}>
-            <div className="swiper-slide-content">
-              <Image width={712} height={471} src={img} alt="saas1" />
-            </div>
-          </SwiperSlide>
-        )
-      })}
+      loop
+    >
+      {images.map((img, idx) => (
+        <SwiperSlide key={idx}>
+          <div className="swiper-slide-content">
+            <Image
+              src={img}
+              alt={`SaaS Hero ${idx + 1}`}
+              width={712}
+              height={471}
+              className="img-fluid"
+            />
+          </div>
+        </SwiperSlide>
+      ))}
     </Swiper>
-  )
-}
+  );
+};
 
 const Hero = () => {
   return (
@@ -44,6 +49,13 @@ const Hero = () => {
         <Row className="align-items-center text-center text-sm-start">
           <Col lg={6}>
             <div className="mb-lg-0">
+              <Image
+                src="/assets/images/logo.png"
+                alt="Prompt Logo"
+                width={150}
+                height={50}
+                className="logo-text mb-4"
+              />
               <h1 className="hero-title">
                 A modern look and feel for your&nbsp;
                 <Typist
@@ -79,6 +91,7 @@ const Hero = () => {
         </Row>
       </Container>
     </section>
-  )
-}
-export default Hero
+  );
+};
+
+export default Hero;
