@@ -26,7 +26,7 @@ const MENU_ITEMS: MenuItemTypes[] = [
   },
   {
     key: 'save-tiktok-video',
-    label: 'Home',
+    label: 'Save Tiktok Video',
     url: '/blogs/save-tiktok-video',
     isTitle: false,
   },
@@ -70,21 +70,6 @@ const MENU_ITEMS: MenuItemTypes[] = [
     ],
   },
    
-  {
-    key: 'blogs',
-    label: 'Blog',
-    url: '/pages/blogs/list',
-    parentKey: 'blogs',
-    isDivider: false,
-    
-  },
-  
-  {
-    key: 'contact-us',
-    label: 'Contact us',
-    url: '/contact-us',
-    isTitle: false,
-  },
 ]
 
 const HORIZONTAL_MENU_ITEMS: MenuItemTypes[] = [
@@ -96,7 +81,7 @@ const HORIZONTAL_MENU_ITEMS: MenuItemTypes[] = [
   },
   {
     key: 'save-tiktok-video',
-    label: 'Home',
+    label: 'Save Tiktok Video',
     url: '/blogs/save-tiktok-video',
     isTitle: false,
   },
@@ -138,22 +123,6 @@ const HORIZONTAL_MENU_ITEMS: MenuItemTypes[] = [
 
       
     ],
-  },
-   
-  {
-    key: 'blogs',
-    label: 'Blog',
-    url: '/pages/blogs/list',
-    parentKey: 'blogs',
-    isDivider: false,
-    
-  },
-  
-  {
-    key: 'contact-us',
-    label: 'Contact us',
-    url: '/contact-us',
-    isTitle: false,
   },
 ]
 
