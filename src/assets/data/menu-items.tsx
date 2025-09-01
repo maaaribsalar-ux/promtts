@@ -26,14 +26,20 @@ const MENU_ITEMS: MenuItemTypes[] = [
     isTitle: false,
   },
   {
+    key: 'tiktokstory',
+    label: 'Tiktok Story Downloader',
+    url: '/tiktok-story-downloader',
+    isTitle: false,
+  },
+  {
     key: 'landing',
-    label: 'Landing',
+    label: 'Tiktok Downloaders',
     isTitle: false,
     children: [
       {
         key: 'app',
-        label: 'App',
-        url: '/landing/app',
+        label: 'TikTok Story Downloader',
+        url: '/tiktok-story-downloader',
         parentKey: 'landing',
       },
       {
