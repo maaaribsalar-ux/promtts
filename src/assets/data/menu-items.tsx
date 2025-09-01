@@ -21,7 +21,7 @@ export type MenuItemTypes = {
 const MENU_ITEMS: MenuItemTypes[] = [
   {
     key: 'home',
-    label: 'Home',
+    label: 'Tiktokio',
     url: '/home',
     isTitle: false,
   },
