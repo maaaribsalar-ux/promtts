@@ -54,12 +54,6 @@ const MENU_ITEMS: MenuItemTypes[] = [
         parentKey: 'tiktok-downloader',
       },
       {
-        key: 'download-tiktok-mp3',
-        label: 'Download TikTok MP3',
-        url: '/download-tiktok-mp3',
-        parentKey: 'tiktok-downloader',
-      },
-      {
         key: 'tiktok-photo-downloader',
         label: 'TikTok Photo Downloader',
         url: '/tiktok-photo-downloader',
@@ -100,12 +94,6 @@ const HORIZONTAL_MENU_ITEMS: MenuItemTypes[] = [
         key: 'tiktok-video-downloader',
         label: 'Tiktok Video Downloader',
         url: '/tiktok-video-downloader',
-        parentKey: 'tiktok-downloader',
-      },
-      {
-        key: 'download-tiktok-mp3',
-        label: 'Download TikTok MP3',
-        url: '/download-tiktok-mp3',
         parentKey: 'tiktok-downloader',
       },
       {
