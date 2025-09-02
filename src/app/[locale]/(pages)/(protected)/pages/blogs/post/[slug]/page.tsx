@@ -26,8 +26,16 @@ export async function generateMetadata({
   }
 
   return {
-    title: post.title,
-    description: post.excerpt || 'Read the full blog post on our site.',
+    title: `${post.title} | Premium Landing Pages`,
+    description: post.excerpt || t('defaultDescription', { defaultMessage: 'Read the full blog post on our site.' }),
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `/${locale}/blogs/post/${post.slug}`,
+      type: 'article',
+      publishedTime: post.createdAt,
+      authors: [post.author],
+    },
   };
 }
 
@@ -44,11 +52,11 @@ export default function BlogPost({
   }
 
   return (
-    <>
+    <div className="blog-post-page">
       <Navbar buttonVariant="outline-secondary" centered />
       <Hero post={post} />
-      <div className="container">
-        <Link href="/blogs" className="back-link">
+      <div className="container py-4">
+        <Link href="/blogs" className="back-link mb-4 d-inline-block">
           {t('backToBlogs', { defaultMessage: 'Back to Blogs' })}
         </Link>
         <PostContent content={post.content} />
@@ -57,7 +65,6 @@ export default function BlogPost({
         <AddComment postId={post.id} />
       </div>
       <Footer3 />
-    </>
+    </div>
   );
 }
-
