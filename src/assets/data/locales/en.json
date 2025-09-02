@@ -1,1 +1,12 @@
 
+{
+  "welcome": "Welcome to our application!",
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "© 2025 Your Company"
+  }
+}
