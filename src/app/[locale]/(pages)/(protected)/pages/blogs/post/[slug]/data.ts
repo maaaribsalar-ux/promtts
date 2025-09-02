@@ -19,6 +19,10 @@ export type BlogPost = {
   comments: CommentType[];
   prev: { slug: string; title: string } | null;
   next: { slug: string; title: string } | null;
+  author: string;
+  createdAt: string;
+  readTime: string;
+  category: string;
 };
 
 export const userComments: CommentType[] = [
@@ -54,6 +58,10 @@ export const blogPosts: BlogPost[] = [
     comments: userComments,
     prev: null,
     next: { slug: 'second-post', title: 'My Second Blog Post' },
+    author: 'Emily Blunt',
+    createdAt: '11 Mar, 2020',
+    readTime: '3 min read',
+    category: 'Announcement',
   },
   {
     id: '2',
@@ -61,8 +69,12 @@ export const blogPosts: BlogPost[] = [
     title: 'My Second Blog Post',
     excerpt: 'Diving deeper into advanced topics and tips for success.',
     content: 'This is the full content of the second blog post. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    comments: [userComments[1]], // Example: only the second comment
+    comments: [userComments[1]],
     prev: { slug: 'first-post', title: 'My First Blog Post' },
     next: null,
+    author: 'John Doe',
+    createdAt: '12 Mar, 2020',
+    readTime: '4 min read',
+    category: 'Tips',
   },
 ];
