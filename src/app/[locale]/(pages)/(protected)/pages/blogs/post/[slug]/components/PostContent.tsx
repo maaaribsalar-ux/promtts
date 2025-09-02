@@ -1,3 +1,4 @@
+'use client';
 import { useTranslations } from 'next-intl';
 import { Link } from 'next-intl/navigation';
 import { Button, Card, CardBody, Col, Container, Row } from 'react-bootstrap';
