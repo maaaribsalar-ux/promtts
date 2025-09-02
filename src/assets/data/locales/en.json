@@ -8,5 +8,12 @@
   },
   "footer": {
     "copyright": "© 2025 Your Company"
+  },
+  "blogs": {
+    "post": {
+      "backToBlogs": "Back to Blogs",
+      "notFoundTitle": "Post Not Found"
+    }
   }
 }
+
