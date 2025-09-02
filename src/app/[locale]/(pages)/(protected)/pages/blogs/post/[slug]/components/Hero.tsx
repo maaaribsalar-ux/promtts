@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import { Link } from 'next-intl/link';
+import { Link } from 'next-intl/navigation';
 import Image from 'next/image';
 import { Col, Container, Row } from 'react-bootstrap';
 import IconifyIcon from '@/components/wrappers/IconifyIcon';
@@ -68,7 +68,7 @@ const Hero = ({ post }: HeroProps) => {
                   </Link>
                 </li>
                 <li className="list-inline-item align-middle">
-                  <Link href={`https://www.instagram.com/`}>
+                  <Link href="https://www.instagram.com/">
                     <IconifyIcon className="icon-xs icon-dual-danger" height="20" width="20" icon="lucide:instagram" />
                   </Link>
                 </li>

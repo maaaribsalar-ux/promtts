@@ -1,6 +1,6 @@
 'use client';
 import { useTranslations } from 'next-intl';
-import { Link } from 'next-intl/link';
+import { Link } from 'next-intl/navigation';
 import { Col, Container, OverlayTrigger, Popover, Row } from 'react-bootstrap';
 import IconifyIcon from '@/components/wrappers/IconifyIcon';
 import Image from 'next/image';
@@ -14,7 +14,7 @@ import img1 from '@/assets/images/avatars/img-4.jpg';
 interface PostNavigationProps {
   prevPost: { slug: string; title: string } | null;
   nextPost: { slug: string; title: string } | null;
-  author?: string; // Optional, for consistency with Hero.tsx
+  author?: string;
 }
 
 export default function PostNavigation({ prevPost, nextPost, author = 'Emily Blunt' }: PostNavigationProps) {

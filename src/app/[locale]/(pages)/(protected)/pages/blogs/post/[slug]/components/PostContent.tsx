@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import { Link } from 'next-intl/link';
+import { Link } from 'next-intl/navigation';
 import { Button, Card, CardBody, Col, Container, Row } from 'react-bootstrap';
 import dynamic from 'next/dynamic';
 const GlightBox = dynamic(() => import('@/components/GlightBox'), { ssr: false });
@@ -50,8 +50,8 @@ export default function PostContent({ content }: PostContentProps) {
               </footer>
             </blockquote>
             <p className="pb-2">
-              At vero eos et accusamus et iusto odio dignissimos ducimus thatസ that qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-              et quas molestias excepturi sint occaecati cupiditate provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et
+              At vero eos et accusamus et iusto odio dignissimos ducimus that qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
+              quas molestias excepturi sint occaecati cupiditate provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et
               fuga.
             </p>
             <p className="pb-2">
