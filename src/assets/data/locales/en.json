@@ -6,14 +6,21 @@
     "about": "About",
     "contact": "Contact"
   },
-  "footer": {
-    "copyright": "© 2025 Your Company"
-  },
   "blogs": {
     "post": {
       "backToBlogs": "Back to Blogs",
-      "notFoundTitle": "Post Not Found"
+      "notFoundTitle": "Post Not Found",
+      "defaultDescription": "Read the full blog post on our site.",
+      "breadcrumb": {
+        "home": "Home",
+        "blogs": "Blog"
+      },
+      "share": "Share:"
     }
-  }
+  },
+  "footer": {
+    "copyright": "© 2025 Your Company"
+  },
+  
 }
 
