@@ -1,9 +1,12 @@
-/** @type {import('next').NextConfig} */
-import nextIntlPlugin from 'next-intl/plugin';
+import createNextIntlPlugin from 'next-intl/plugin';
 
-const withNextIntl = nextIntlPlugin('./src/i18n/request.ts');
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const nextConfig = {
   reactStrictMode: true,
-  // Removed i18n property to avoid conflicts with next-intl
+  sassOptions: {
+    includePaths: ['./src/assets/scss'],
+  },
 };
+
+export default withNextIntl(nextConfig);
