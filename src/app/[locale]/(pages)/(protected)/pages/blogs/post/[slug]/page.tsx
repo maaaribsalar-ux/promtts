@@ -1,4 +1,3 @@
-```tsx
 import { useTranslations } from 'next-intl';
 import { Link } from 'next-intl/client';
 import { notFound } from 'next/navigation';
@@ -10,7 +9,7 @@ import PostNavigation from './components/PostNavigation';
 import Comments from './components/Comments';
 import AddComment from './components/AddComment';
 import Footer3 from '@/components/common/Footer3';
-import { blogPosts } from './data'; // Adjust based on your data.ts export
+import { blogPosts } from './data';
 
 export async function generateMetadata({
   params: { slug, locale },
@@ -38,11 +37,8 @@ export default function BlogPost({
   params: { slug: string; locale: string };
 }) {
   const t = useTranslations('blogs.post');
-
-  // Fetch the blog post data based on slug
   const post = blogPosts.find((post) => post.slug === slug);
 
-  // If no post is found, trigger 404
   if (!post) {
     notFound();
   }
@@ -64,4 +60,4 @@ export default function BlogPost({
     </>
   );
 }
-```
+
