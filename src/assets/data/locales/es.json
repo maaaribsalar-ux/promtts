@@ -14,7 +14,34 @@
         "home": "Inicio",
         "blogs": "Blog"
       },
-      "share": "Compartir:"
+      "share": "Compartir:",
+      "imageCaption": "El pie de foto que hace referencia a la imagen anterior",
+      "sectionTitle": "Itaque earum rerum hic tenetur sapiente delectu",
+      "quoteAuthor": "Christian Hall",
+      "conclusion": "Conclusión",
+      "feature1": "Lugares de ensueño",
+      "feature2": "Tours de caminatas/senderismo",
+      "feature3": "Lecciones de tenis con entrenadores expertos",
+      "feature4": "Aventuras de navegación",
+      "commentsTitle": "Comentarios",
+      "reply": "Responder",
+      "prevPost": "Publicación Anterior",
+      "nextPost": "Publicación Siguiente",
+      "byAuthor": "por {author}",
+      "authorBio": "Escribo sobre las últimas tendencias en diseño y desarrollo web.",
+      "postComment": "Publicar un comentario",
+      "form": {
+        "nameRequired": "Por favor, ingrese su nombre",
+        "emailRequired": "Por favor, ingrese su correo electrónico",
+        "emailInvalid": "Por favor, ingrese un correo electrónico válido",
+        "subjectRequired": "Por favor, ingrese un asunto",
+        "messageRequired": "Por favor, ingrese un mensaje",
+        "namePlaceholder": "Nombre",
+        "emailPlaceholder": "Correo electrónico",
+        "subjectPlaceholder": "Asunto",
+        "messagePlaceholder": "Mensaje",
+        "submit": "Enviar"
+      }
     }
   },
   "footer": {
