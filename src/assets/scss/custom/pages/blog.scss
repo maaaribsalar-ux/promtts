@@ -1,0 +1,99 @@
+// Blog Post Page Styles
+.blog-post-page {
+  background-color: $light;
+}
+
+// Back Link
+.back-link {
+  color: $primary;
+  text-decoration: none;
+  font-weight: 500;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Hero Section
+.hero-4 {
+  .hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  .avatar-border {
+    border: 2px solid $primary;
+  }
+  .badge-soft-orange {
+    background-color: rgba($orange, 0.1);
+    color: $orange;
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .icon-dual-primary {
+    color: $primary;
+  }
+  .icon-dual-info {
+    color: $info;
+  }
+  .icon-dual-danger {
+    color: $danger;
+  }
+}
+
+// Post Navigation
+.post-navigation {
+  .btn-white {
+    background-color: $white;
+    border: 1px solid $gray-300;
+    &:hover {
+      background-color: $gray-100;
+    }
+  }
+  .icon-xs {
+    font-size: 1rem;
+  }
+}
+
+// Comments Section
+.comments-section {
+  .comment {
+    padding: 1rem 0;
+    border-bottom: 1px solid $gray-300;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  .replies {
+    margin-left: 2rem;
+  }
+  .badge-soft-secondary {
+    background-color: rgba($secondary, 0.1);
+    color: $secondary;
+  }
+  .icon-xxs {
+    font-size: 0.75rem;
+  }
+}
+
+// Add Comment Form
+.add-comment {
+  .account-form {
+    .form-control {
+      border-radius: 0.25rem;
+      border: 1px solid $gray-300;
+      &:focus {
+        border-color: $primary;
+        box-shadow: 0 0 0 0.2rem rgba($primary, 0.25);
+      }
+    }
+    .btn-secondary {
+      background-color: $secondary;
+      border-color: $secondary;
+      &:hover {
+        background-color: darken($secondary, 10%);
+        border-color: darken($secondary, 10%);
+      }
+    }
+  }
+}
