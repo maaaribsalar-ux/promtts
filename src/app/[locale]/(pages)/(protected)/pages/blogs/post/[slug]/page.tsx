@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import { Link } from 'next-intl/link';
+import { Link } from 'next-intl/navigation';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Navbar from '@/components/layout/Navbar';
