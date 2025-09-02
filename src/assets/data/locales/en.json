@@ -15,7 +15,34 @@
         "home": "Home",
         "blogs": "Blog"
       },
-      "share": "Share:"
+      "share": "Share:",
+      "imageCaption": "The image caption referencing the above image",
+      "sectionTitle": "Itaque earum rerum hic tenetur sapiente delectu",
+      "quoteAuthor": "Christian Hall",
+      "conclusion": "Conclusion",
+      "feature1": "Dream places",
+      "feature2": "Walking/Hiking tours",
+      "feature3": "Tennis lessons with expert coaches",
+      "feature4": "Sailing adventures",
+      "commentsTitle": "Comments",
+      "reply": "Reply",
+      "prevPost": "Prev Post",
+      "nextPost": "Next Post",
+      "byAuthor": "by {author}",
+      "authorBio": "I write about the latest trend in web design and development.",
+      "postComment": "Post a comment",
+      "form": {
+        "nameRequired": "Please enter Name",
+        "emailRequired": "Please enter Email",
+        "emailInvalid": "Please enter valid Email",
+        "subjectRequired": "Please enter Subject",
+        "messageRequired": "Please enter Message",
+        "namePlaceholder": "Name",
+        "emailPlaceholder": "Email",
+        "subjectPlaceholder": "Subject",
+        "messagePlaceholder": "Message",
+        "submit": "Submit"
+      }
     }
   },
   "footer": {
