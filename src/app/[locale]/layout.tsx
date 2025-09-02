@@ -1,20 +1,21 @@
-import Image from 'next/image'
-import type { Metadata } from 'next'
-import { Be_Vietnam_Pro } from 'next/font/google'
-import logo from '@/assets/images/logo.png'
-import { DEFAULT_PAGE_TITLE } from '@/assets/data/constants'
-import AppProvidersWrapper from '@/components/wrappers/AppProvidersWrapper'
-import NextTopLoader from 'nextjs-toploader'
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import { NextIntlClientProvider } from 'next-intl';
+import type { Metadata } from 'next';
+import { Be_Vietnam_Pro } from 'next/font/google';
+import logo from '@/assets/images/logo.png';
+import { DEFAULT_PAGE_TITLE } from '@/assets/data/constants';
+import AppProvidersWrapper from '@/components/wrappers/AppProvidersWrapper';
+import NextTopLoader from 'nextjs-toploader';
+import 'aos/dist/aos.css';
+import '@/assets/scss/theme.scss';
 
 const BeVietnamPro = Be_Vietnam_Pro({
   display: 'swap',
   weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin'],
   style: 'normal',
-})
-
-import 'aos/dist/aos.css'
-import '@/assets/scss/theme.scss'
+});
 
 export const metadata: Metadata = {
   title: {
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     default: DEFAULT_PAGE_TITLE,
   },
   description: 'A fully featured multi purpose template',
-}
+};
 
 const splashScreenStyles = `
 #splash-screen {
@@ -53,27 +54,38 @@ const splashScreenStyles = `
     visibility: hidden;
   }
 }
-`
+`;
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params: { locale },
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
+  params: { locale: string };
 }>) {
+  let messages;
+  try {
+    messages = (await import(`@/assets/data/locales/${locale}.json`)).default;
+  } catch (error) {
+    notFound();
+  }
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <head>
         <style suppressHydrationWarning>{splashScreenStyles}</style>
       </head>
       <body className={BeVietnamPro.className}>
-        <div id="splash-screen">
-          <Image alt="logo-text" src={logo} style={{ height: '8%', width: 'auto' }} priority />
-        </div>
-        <NextTopLoader color="#05f" showSpinner={false} />
-        <div id="__next_splash">
-          <AppProvidersWrapper>{children}</AppProvidersWrapper>
-        </div>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <div id="splash-screen">
+            <Image alt="logo-text" src={logo} style={{ height: '8%', width: 'auto' }} priority />
+          </div>
+          <NextTopLoader color="#05f" showSpinner={false} />
+          <div id="__next_splash">
+            <AppProvidersWrapper>{children}</AppProvidersWrapper>
+          </div>
+        </NextIntlClientProvider>
       </body>
     </html>
-  )
+  );
 }
