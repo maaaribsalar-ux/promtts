@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import { Link } from 'next-intl/client';
+import { Link } from 'next-intl/link';
 import Image from 'next/image';
 import { Col, Container, Row } from 'react-bootstrap';
 import IconifyIcon from '@/components/wrappers/IconifyIcon';
@@ -58,19 +58,19 @@ const Hero = ({ post }: HeroProps) => {
                   {t('share', { defaultMessage: 'Share:' })}
                 </li>
                 <li className="list-inline-item me-2 align-middle">
-                  <span role="button">
+                  <Link href={`https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}>
                     <IconifyIcon className="icon-xs icon-dual-primary" height="20" width="20" icon="lucide:facebook" />
-                  </span>
+                  </Link>
                 </li>
                 <li className="list-inline-item me-2 align-middle">
-                  <span role="button">
+                  <Link href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}>
                     <IconifyIcon className="icon-xs icon-dual-info" height="20" width="20" icon="lucide:twitter" />
-                  </span>
+                  </Link>
                 </li>
                 <li className="list-inline-item align-middle">
-                  <span role="button">
+                  <Link href={`https://www.instagram.com/`}>
                     <IconifyIcon className="icon-xs icon-dual-danger" height="20" width="20" icon="lucide:instagram" />
-                  </span>
+                  </Link>
                 </li>
               </ul>
             </div>
