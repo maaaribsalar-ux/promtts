@@ -1,1 +1,11 @@
-
+{
+  "welcome": "¡Bienvenido a nuestra aplicación!",
+  "navbar": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "contact": "Contacto"
+  },
+  "footer": {
+    "copyright": "© 2025 Tu Empresa"
+  }
+}
