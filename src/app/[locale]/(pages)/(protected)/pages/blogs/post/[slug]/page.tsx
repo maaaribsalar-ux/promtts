@@ -9,31 +9,7 @@ import PostNavigation from './components/PostNavigation';
 import Comments from './components/Comments';
 import AddComment from './components/AddComment';
 import Footer3 from '@/components/common/Footer3';
-import { blogPosts, CommentType } from './data';
-
-// Define prop interfaces for components
-interface PostContentProps {
-  content: string;
-}
-
-interface PostNavigationProps {
-  prevPost: { slug: string; title: string } | null;
-  nextPost: { slug: string; title: string } | null;
-}
-
-interface CommentsProps {
-  comments: CommentType[];
-}
-
-interface AddCommentProps {
-  postId: string;
-}
-
-// Update component imports with types
-const TypedPostContent = PostContent as React.FC<PostContentProps>;
-const TypedPostNavigation = PostNavigation as React.FC<PostNavigationProps>;
-const TypedComments = Comments as React.FC<CommentsProps>;
-const TypedAddComment = AddComment as React.FC<AddCommentProps>;
+import { blogPosts } from './data';
 
 export async function generateMetadata({
   params: { slug, locale },
@@ -83,10 +59,10 @@ export default function BlogPost({
         <Link href="/blogs" className="back-link mb-4 d-inline-block">
           {t('backToBlogs', { defaultMessage: 'Back to Blogs' })}
         </Link>
-        <TypedPostContent content={post.content} />
-        <TypedPostNavigation prevPost={post.prev} nextPost={post.next} />
-        <TypedComments comments={post.comments} />
-        <TypedAddComment postId={post.id} />
+        <PostContent content={post.content} />
+        <PostNavigation prevPost={post.prev} nextPost={post.next} author={post.author} />
+        <Comments comments={post.comments} />
+        <AddComment postId={post.id} />
       </div>
       <Footer3 />
     </div>
