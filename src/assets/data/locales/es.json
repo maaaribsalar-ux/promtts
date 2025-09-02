@@ -5,6 +5,12 @@
     "about": "Acerca de",
     "contact": "Contacto"
   },
+  "blogs": {
+    "post": {
+      "backToBlogs": "Volver a Blogs",
+      "notFoundTitle": "Publicación No Encontrada"
+    }
+  },
   "footer": {
     "copyright": "© 2025 Tu Empresa"
   }
