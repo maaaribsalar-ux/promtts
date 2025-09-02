@@ -1,11 +1,17 @@
-import { Col, Container, Row } from 'react-bootstrap'
-import { userComments } from '../data'
-import { Fragment } from 'react'
-import Image from 'next/image'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import AddComment from './AddComment'
+import { useTranslations } from 'next-intl';
+import { Col, Container, Row } from 'react-bootstrap';
+import { Fragment } from 'react';
+import Image from 'next/image';
+import IconifyIcon from '@/components/wrappers/IconifyIcon';
+import { CommentType } from '../data';
 
-const Comments = () => {
+interface CommentsProps {
+  comments: CommentType[];
+}
+
+export default function Comments({ comments }: CommentsProps) {
+  const t = useTranslations('blogs.post');
+
   return (
     <section className="position-relative pb-5">
       <Container>
@@ -13,59 +19,53 @@ const Comments = () => {
           <Col lg={12}>
             <div>
               <h4 className="mb-3">
-                Comments<span className="badge badge-soft-secondary fs-14 align-middle ms-2">3</span>
+                {t('commentsTitle', { defaultMessage: 'Comments' })}
+                <span className="badge badge-soft-secondary fs-14 align-middle ms-2">{comments.length}</span>
               </h4>
-              {userComments.map((comment, idx) => {
-                return (
-                  <Fragment key={idx}>
-                    <div className="d-flex align-items-top mt-4">
-                      <Image className="me-2 rounded-sm" src={comment.avatar} alt="avatar" height={36} />
-                      <div className="flex-grow-1">
-                        <h6 className="m-0">{comment.name} </h6>
-                        <p className="text-muted mb-0">
-                          <small>{comment.createdAt}</small>
-                        </p>
-                        <p className="my-1">{comment.description}</p>
-                        <div>
-                          <span role="button" className="btn btn-sm btn-link text-primary fw-medium p-0">
-                            <IconifyIcon className="icon-xxs  me-1" icon="lucide:message-circle" />
-                            Reply
-                          </span>
-                        </div>
-                        {comment.reply &&
-                          comment.reply.map((comment, idx) => (
-                            <div className="d-flex align-items-top mt-4" key={idx}>
-                              <Image className="me-2 rounded-sm" src={comment.avatar} alt="avatar" height={36} />
-                              <div className="flex-grow-1">
-                                <h6 className="m-0">{comment.name} </h6>
-                                <p className="text-muted mb-0">
-                                  <small>{comment.createdAt}</small>
-                                </p>
-                                <p className="my-1">{comment.description}</p>
-                                <div>
-                                  <span role="button" className="btn btn-sm btn-link text-primary fw-medium p-0">
-                                    <IconifyIcon className="icon-xxs me-1" icon="lucide:message-circle" />
-                                    Reply
-                                  </span>
-                                </div>
+              {comments.map((comment, idx) => (
+                <Fragment key={idx}>
+                  <div className="d-flex align-items-top mt-4">
+                    <Image className="me-2 rounded-sm" src={comment.avatar} alt="avatar" height={36} />
+                    <div className="flex-grow-1">
+                      <h6 className="m-0">{comment.name}</h6>
+                      <p className="text-muted mb-0">
+                        <small>{comment.createdAt}</small>
+                      </p>
+                      <p className="my-1">{comment.description}</p>
+                      <div>
+                        <span role="button" className="btn btn-sm btn-link text-primary fw-medium p-0">
+                          <IconifyIcon className="icon-xxs me-1" icon="lucide:message-circle" />
+                          {t('reply', { defaultMessage: 'Reply' })}
+                        </span>
+                      </div>
+                      {comment.reply &&
+                        comment.reply.map((reply, replyIdx) => (
+                          <div className="d-flex align-items-top mt-4" key={replyIdx}>
+                            <Image className="me-2 rounded-sm" src={reply.avatar} alt="avatar" height={36} />
+                            <div className="flex-grow-1">
+                              <h6 className="m-0">{reply.name}</h6>
+                              <p className="text-muted mb-0">
+                                <small>{reply.createdAt}</small>
+                              </p>
+                              <p className="my-1">{reply.description}</p>
+                              <div>
+                                <span role="button" className="btn btn-sm btn-link text-primary fw-medium p-0">
+                                  <IconifyIcon className="icon-xxs me-1" icon="lucide:message-circle" />
+                                  {t('reply', { defaultMessage: 'Reply' })}
+                                </span>
                               </div>
                             </div>
-                          ))}
-                      </div>
+                          </div>
+                        ))}
                     </div>
-
-                    {userComments.length - 1 != idx && <hr className="my-4" />}
-                  </Fragment>
-                )
-              })}
-            </div>
-            <div className="mt-5 mb-lg-0 mb-5">
-              <AddComment />
+                  </div>
+                  {comments.length - 1 !== idx && <hr className="my-4" />}
+                </Fragment>
+              ))}
             </div>
           </Col>
         </Row>
       </Container>
     </section>
-  )
+  );
 }
-export default Comments
