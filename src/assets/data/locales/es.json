@@ -8,7 +8,13 @@
   "blogs": {
     "post": {
       "backToBlogs": "Volver a Blogs",
-      "notFoundTitle": "Publicación No Encontrada"
+      "notFoundTitle": "Publicación No Encontrada",
+      "defaultDescription": "Lee la publicación completa en nuestro sitio.",
+      "breadcrumb": {
+        "home": "Inicio",
+        "blogs": "Blog"
+      },
+      "share": "Compartir:"
     }
   },
   "footer": {
