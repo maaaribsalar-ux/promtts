@@ -6,13 +6,11 @@ Website: https://coderthemes.com/
 Contact: support@coderthemes.com
 File: Main Css File
 */
- 
-
 
 // Google Fonts
 @import "custom/fonts";
 
-//CORE FILES
+// CORE FILES
 @import "./node_modules/bootstrap/scss/functions";
 @import "./node_modules/bootstrap/scss/variables";
 @import "config/variables";
@@ -60,7 +58,6 @@ File: Main Css File
 @import "components/features";
 @import "components/testimonials";
 
-
 // custom plugins
 @import "custom/plugins/rateit";
 @import "custom/plugins/gallery";
@@ -75,3 +72,4 @@ File: Main Css File
 // pages
 @import "custom/pages/docs";
 @import "custom/pages/portfolio";
+@import "custom/pages/blog";
